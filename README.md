@@ -1,8 +1,8 @@
 
 
-# Conjur Spring Boot Plugin
+# Spring-boot-cloud-conjur-sdk 
 
-The Conjur Spring Boot Plugin provides client-side support for externalized configuration of secrets in a distributed system. You can integrate the plugin with exisiting and new Spring Boot applications to retrieve secrets from Conjur. Using the Spring Boot Plugin, you can retrieve application credentials and secrets stored in Conjur with minimal code changes to the existing Spring Boot application code.
+The Spring boot cloud conjur sdk Plugin provides client-side support for externalized configuration of secrets in a distributed system. You can integrate the plugin with exisiting and new Spring Boot applications to retrieve secrets from Conjur. Using the SSpring boot cloud conjur sdk, you can retrieve application credentials and secrets stored in Conjur with minimal code changes to the existing Spring Boot application code.
 
 ## Benefits of storing application secrets in [CyberArk's Vault](https://www.conjur.org/)
 
@@ -23,14 +23,17 @@ and trusted to use with Conjur Open Source**. For more detailed information on o
 
 The following features are available with the Spring Boot Plugin:
 
-* Retrieve a single secret from the CyberArk Vault by specifying the path to the secret in the Vault.
-* Retrieve multiple secrets from the CyberArk Vault by specifying the paths to the secrets in the Vault.
-* Retrieve secrets from the CyberArk Vault and initialize the Spring environment with remote property sources.
+1.	Dynamically inject secrets from Conjur vault to the existing Spring Boot applications using the @Value annotation and as well as to the standalone Spring Boot applications using the @ConjurPropertySource
+2.	Integrating with the Spring Cloud Config Server to externalize the Conjur Authentication Parameter. 
+3.	Authenticate to the Conjur Server using the API & Auth Token mechanism
+4.	Map the externalized properties to the object using @ConfigurationProperties
+5.	The spring-cloud config related beans should be loaded conditionally on beans or through properties configuration, to simplify the integration for the applications relying on spring-boot in general
+
 
 
 ## Limitations
 
-The Spring Boot Plugin does not support creating, deleting, or updating secrets.
+The Spring boot cloud conjur sdk does not support creating, deleting, or updating secrets.
 
 ## Technical Requirements
 
